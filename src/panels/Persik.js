@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Panel from '@vkontakte/vkui/dist/components/Panel/Panel';
 import PanelHeader from '@vkontakte/vkui/dist/components/PanelHeader/PanelHeader';
-import {Avatar, Group, Header, SimpleCell, InfoRow,CardGrid,Card,Text} from '@vkontakte/vkui';
+import {Avatar, Group, Header, SimpleCell, InfoRow,CardGrid,Card,Text,Button} from '@vkontakte/vkui';
 
 import './Persik.css';
 
@@ -45,6 +45,9 @@ const Persik = props => (
             <Text weight="regular" style={{ margin: 16 }}>Я студент 5 курса ВКИ(высший колледж информатики), начал изучение VK mini apps, это моё первое приложение. В процессе разработки была изучена JavaScript-библиотека ReactJS и компоненты VKUI, также научился работать с данными API.</Text>
           </Card>
         </CardGrid>
+        <Group>
+       		<Button size="xl" mode="secondary" style={{marginBottom:25}} onClick={props.group} >Подписаться на сообщество</Button>
+       </Group>
       </Group>
 	</Panel>
 );
@@ -55,6 +58,7 @@ Persik.propTypes = {
 	fetchedUser: PropTypes.shape({
 		photo_200: PropTypes.string,
 	}),
+	group: PropTypes.func.isRequired,
 };
 
 export default Persik;

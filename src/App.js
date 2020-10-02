@@ -3,6 +3,7 @@ import '@vkontakte/vkui/dist/vkui.css';
 import { View, Tabbar, TabbarItem, Epic} from '@vkontakte/vkui';
 import Icon28SlidersOutline from '@vkontakte/icons/dist/28/sliders_outline';
 import Icon28FavoriteOutline from '@vkontakte/icons/dist/28/favorite_outline';
+import bridge from '@vkontakte/vk-bridge';
 
 
 import Home from './panels/Home';
@@ -17,7 +18,9 @@ const App = () => {
 		setActivePanel(e.currentTarget.dataset.story);
 	};
 
-
+	 const group = () => {
+			bridge.send("VKWebAppJoinGroup", {"group_id": 187606185});	
+		};
 
 	return (
 		<Epic activeStory={activePanel}
@@ -43,7 +46,7 @@ const App = () => {
 			<Home id='home'  go={go}  />
 		</View>
 		<View id="persik" activePanel={activePanel} >
-			<Persik id='persik' go={go} fetchedUser={fetchedUser}/>
+			<Persik id='persik' go={go} fetchedUser={fetchedUser} group={group} />
 		</View>
       </Epic>
 	);
