@@ -19,7 +19,6 @@ const App = () => {
 
 
 
-
 	return (
 		<Epic activeStory={activePanel}
 	 	tabbar={
@@ -44,7 +43,7 @@ const App = () => {
 			<Home id='home'  go={go}  />
 		</View>
 		<View id="persik" activePanel={activePanel} >
-			<Persik id='persik' go={go} fetchedUser={fetchedUser} />
+			<Persik id='persik' go={go} fetchedUser={fetchedUser}/>
 		</View>
       </Epic>
 	);

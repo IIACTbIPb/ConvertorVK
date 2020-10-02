@@ -13,7 +13,8 @@ class Home extends React.Component {
     this.state = {
     	date: "",
 		valute: {},
-		result:1,
+		result:0,
+		//resultCount:0,
 		history:[]
     };
 
@@ -36,8 +37,12 @@ class Home extends React.Component {
 		let selectOne = document.getElementById("select_one");
 		let selectTwo = document.getElementById("select_two");
 		let count = document.getElementById("count");
-		this.setState({result: ((this.state.valute[selectTwo.value]*parseInt(count.value))/this.state.valute[selectOne.value])})
-		console.log(count.value , " " , selectOne.value, "=>", selectTwo.value,":", this.state.result);
+		//let resultCount = document.getElementById("resultCount");
+
+		this.setState({result: ((this.state.valute[selectTwo.value]*parseFloat(count.value))/this.state.valute[selectOne.value]).toFixed(3)})
+
+		//this.setState({resultCount: ((parseFloat(resultCount.value))/this.state.valute[selectTwo.value]).toFixed(3)})
+		
 	}
 
 	saveHistory = () => {
@@ -62,7 +67,7 @@ class Home extends React.Component {
 			    	
 				</Select>
 			    <FormLayoutGroup top="Количество">
-			        <Input type="number" defaultValue="1" min="1" id="count"/>
+			        <Input type="number" defaultValue="0" min="0"  id="count"/>
      			</FormLayoutGroup>
      			<Select top="Конвентировать в" id="select_two">
 					  {Object.keys(this.state.valute).map((keyName,i)=>
@@ -74,7 +79,7 @@ class Home extends React.Component {
 				 <FormLayoutGroup top="Результат" >
 			        <Input type="number"  value={this.state.result} disabled />
      			</FormLayoutGroup>
-     			<Button size="l" onClick={this.saveHistory} >Сохранить</Button>
+     			<Button size="xl" onClick={this.saveHistory} >Сохранить</Button>
 			</FormLayout>
 			<Div>
 				<Title level="4" weight="semibold" style={{ margin: 16 }}>{this.state.history}</Title>

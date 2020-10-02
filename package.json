@@ -2,6 +2,7 @@
   "name": "convertorVK",
   "version": "1.0.0",
   "description": "",
+  "homepage":"./",
   "main": "index.js",
   "scripts": {
     "start": "cross-env PORT=10888 HTTPS=true react-scripts start",
@@ -13,6 +14,7 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
+    "@vkontakte/vk-miniapps-deploy": "0.0.17",
     "cross-env": "^5.2.0",
     "react-hot-loader": "^4.9.0",
     "react-scripts": "^3.4.3"
@@ -20,7 +22,6 @@
   "dependencies": {
     "@vkontakte/icons": "^1.41.1",
     "@vkontakte/vk-bridge": "^2.3.0",
-    "@vkontakte/vk-miniapps-deploy": "0.0.17",
     "@vkontakte/vkui": "^3.12.6",
     "babel-eslint": "^10.1.0",
     "chalk": "^2.4.2",

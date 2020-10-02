@@ -8,5 +8,6 @@ import App from "./App";
 // Init VK  Mini App
 bridge.send("VKWebAppInit");
 
+
 ReactDOM.render(<App />, document.getElementById("root"));
 
